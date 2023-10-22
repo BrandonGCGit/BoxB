@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".ui.auth.LoginFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="89dp"
+            android:layout_height="127dp"
+            android:layout_marginTop="76dp"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="#00FF0000"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="342dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                android:padding="30dp">
+
+
+                <TextView
+
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:gravity="center"
+                    android:text="@string/title_login"
+                    android:textColor="@color/white"
+                    android:textSize="34sp" />
+
+                <EditText
+                    android:id="@+id/txt_Login_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/soft_white"
+                    android:ems="10"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="@string/txt_email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/txt_Login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/soft_white"
+                    android:ems="10"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="@string/txt_password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_Login_forgotPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/txt_forgot_password"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_Login_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:backgroundTint="@color/green"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/title_login"
+                    android:textSize="20sp"
+                    app:cornerRadius="15dp"
+                    app:strokeColor="@color/soft_white"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="305dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="184dp"
+                android:layout_height="27dp"
+                android:gravity="center|end"
+                android:text="@string/txt_create_account"
+                android:textColor="@color/soft_white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="@string/title_register"
+                android:textColor="@color/green"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

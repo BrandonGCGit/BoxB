@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "ucr.ac.cr.boxb"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "ucr.ac.cr.boxb"
