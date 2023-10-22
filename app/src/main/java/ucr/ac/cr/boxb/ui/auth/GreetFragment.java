@@ -2,13 +2,19 @@ package ucr.ac.cr.boxb.ui.auth;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import ucr.ac.cr.boxb.R;
+import ucr.ac.cr.boxb.databinding.FragmentGreetBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +22,11 @@ import ucr.ac.cr.boxb.R;
  * create an instance of this fragment.
  */
 public class GreetFragment extends Fragment {
+
+    private FragmentGreetBinding binding;
+    NavController navController;
+    Button btn_Greet_getStarted;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +72,24 @@ public class GreetFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_greet, container, false);
+        binding =  FragmentGreetBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+
+        return root;
+    }//onCreateView
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(requireView());
+        btn_Greet_getStarted = binding.btnGreetGetStarted;
+
+        btn_Greet_getStarted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_greetFragment_to_loginFragment);
+            }
+        });
     }
 }

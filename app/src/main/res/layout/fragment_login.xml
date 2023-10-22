@@ -16,10 +16,11 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="89dp"
-            android:layout_height="127dp"
-            android:layout_marginTop="76dp"
+            android:layout_width="72dp"
+            android:layout_height="97dp"
+            android:layout_marginBottom="20dp"
             android:src="@drawable/logo"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,18 +29,19 @@
             android:id="@+id/cardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:cardBackgroundColor="#00FF0000"
+            app:cardBackgroundColor="@color/cardview_shadow_end_color"
             app:cardCornerRadius="15dp"
-            app:cardElevation="4dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="342dp"
-                android:layout_height="wrap_content"
+                android:layout_width="370dp"
+                android:layout_height="match_parent"
 
                 android:orientation="vertical"
                 android:padding="30dp">
@@ -92,7 +94,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/open_sans"
                     android:text="@string/txt_forgot_password"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/soft_white" />
 
                 <Button
                     android:id="@+id/btn_Login_login"
@@ -116,7 +118,6 @@
             android:id="@+id/linearLayout4"
             android:layout_width="305dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -133,13 +134,14 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tv_Login_signUp"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:gravity="start"
                 android:text="@string/title_register"
+                android:textAllCaps="false"
                 android:textColor="@color/green"
                 android:textSize="20sp" />
         </LinearLayout>

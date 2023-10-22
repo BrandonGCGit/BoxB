@@ -2,13 +2,20 @@ package ucr.ac.cr.boxb.ui.auth;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import ucr.ac.cr.boxb.R;
+import ucr.ac.cr.boxb.databinding.FragmentLoginBinding;
+import ucr.ac.cr.boxb.databinding.FragmentRegisterBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +23,10 @@ import ucr.ac.cr.boxb.R;
  * create an instance of this fragment.
  */
 public class RegisterFragment extends Fragment {
+
+    private FragmentRegisterBinding binding;
+    NavController navController;
+    TextView tv_Register_login;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +72,24 @@ public class RegisterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false);
+        binding = FragmentRegisterBinding.inflate(inflater, container, false);
+        // Inflate the layout for this fragment
+        View root = binding.getRoot();
+
+        return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(requireView());
+        tv_Register_login = binding.tvRegisterLogin;
+
+        tv_Register_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_registerFragment_to_loginFragment);
+            }
+        });
     }
 }
