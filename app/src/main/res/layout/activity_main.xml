@@ -39,4 +39,13 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="557dp" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:text="Button"
+        app:layout_constraintStart_toEndOf="@+id/btn_Prueba_Login"
+        tools:layout_editor_absoluteY="189dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
