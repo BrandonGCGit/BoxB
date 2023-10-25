@@ -34,13 +34,12 @@ public class FragmentAddClient extends Fragment {
         binding = FragmentAddClientBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
 
+
         txtEmail = binding.txtEmailAddClient;
         txtName = binding.txtNameAddClient;
         txtLastName = binding.txtLastNameAddClient;
 
         return root;
-
-
 
     }
 
