@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = FirebaseFirestore.getInstance();
-        fillList();
+//        fillList();
 
     }//End onCreate
 
@@ -75,6 +75,11 @@ public class HomeFragment extends Fragment {
 
     }//End onViewCreated
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        fillList();
+    }
 
     public void fillList(){
 
@@ -85,6 +90,7 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
+                            listClients.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
 //                                Toast.makeText(getContext(), "doc: " + document.getId(), Toast.LENGTH_SHORT).show();
 ////                                Log.d(TAG, document.getId() + " => " + document.getData());
