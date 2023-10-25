@@ -35,9 +35,9 @@ public class FragmentAddClient extends Fragment {
         View root = binding.getRoot();
 
 
-        txtEmail = binding.txtEmailAddClient;
-        txtName = binding.txtNameAddClient;
-        txtLastName = binding.txtLastNameAddClient;
+//        txtEmail = binding.txtEmailAddClient;
+//        txtName = binding.txtNameAddClient;
+//        txtLastName = binding.txtLastNameAddClient;
 
         return root;
 
