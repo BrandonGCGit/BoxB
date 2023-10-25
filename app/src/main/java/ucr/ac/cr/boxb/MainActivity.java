@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        initializeFirebase();
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -61,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void initializeFirebase(){
+        FirebaseApp.initializeApp(MainActivity.this);
     }
 
     private void replaceFragment(HomeFragment homeFragment) {
