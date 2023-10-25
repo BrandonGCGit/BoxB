@@ -53,6 +53,8 @@ public class FragmentAddClient extends Fragment {
         txtName = binding.txtNameAddClient;
         txtLastName = binding.txtLastNameAddClient;
 
+        btn_addClient = binding.btnClientAdd;
+
         // Create a new user with a first and last name
         Map<String, Object> user = new HashMap<>();
         user.put("documentID", uid);
@@ -73,6 +75,32 @@ public class FragmentAddClient extends Fragment {
                         Log.w(TAG, "Error adding document", e);
                     }
                 });
+
+        btn_addClient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create a new user with a first and last name
+                Map<String, Object> user = new HashMap<>();
+                user.put("documentID", uid);
+                user.put("name", txtName.getText().toString());
+
+// Add a new document with a generated ID
+                db.collection("Clients")
+                        .add(user)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error adding document", e);
+                            }
+                        });
+            }
+        });
 
         return root;
 
