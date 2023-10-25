@@ -45,10 +45,6 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-<<<<<<< HEAD
-
-=======
->>>>>>> dfa25534d5444337a609ee8cf31b26a2159f6377
         return root;
     }//End onCreateView
 
@@ -62,6 +58,7 @@ public class HomeFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = FirebaseFirestore.getInstance();
+        fillList();
     }//End onCreate
 
     @Override

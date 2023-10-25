@@ -4,9 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".ui.home.HomeFragment"/>
-=======
     android:background="@color/blue"
     tools:context=".ui.home.HomeFragment">
 
@@ -37,4 +34,3 @@
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> dfa25534d5444337a609ee8cf31b26a2159f6377
