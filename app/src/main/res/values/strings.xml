@@ -6,6 +6,7 @@
     <string name="title_login">Login</string>
     <string name="title_register">Sign Up</string>
     <string name="title_greeting">Get Started</string>
+    <string name="title_clients">Clients</string>
 
 
     <string name="txt_username">Username</string>
