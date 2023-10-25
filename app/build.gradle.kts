@@ -52,6 +52,9 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.4.0"))
     // Import the Firebase Authentication
     implementation("com.google.firebase:firebase-auth")
-    // Import the Firebase RealTime Database
+    // Import the Firestore
+    implementation("com.google.firebase:firebase-firestore")
+
+
 
 }
