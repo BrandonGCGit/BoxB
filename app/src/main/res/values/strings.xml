@@ -7,15 +7,46 @@
     <string name="title_register">Sign Up</string>
     <string name="title_greeting">Get Started</string>
 
+
     <string name="txt_username">Username</string>
     <string name="txt_email">Email</string>
     <string name="txt_password">Password</string>
+
     <string name="txt_confirm_password">Confirm Password</string>
     <string name="txt_photo">Photo</string>
+
+
 
     <string name="txt_forgot_password">Forgot Password?</string>
     <string name="txt_create_account">Create a new account</string>
     <string name="txt_already_account">Have an account?</string>
+
+    <string-array name="types">
+        <item>type 1</item>
+        <item>type 2</item>
+        <item>type 3</item>
+        <item>type 4</item>
+    </string-array>
+
+    <string-array name="pays">
+        <item>pay 1</item>
+        <item>pay 2</item>
+        <item>pay 3</item>
+        <item>pay 4</item>
+    </string-array>
+
+    <string name="txt_user_LastName">Last Name</string>
+    <string name="txt_use_Name">Name</string>
+
+    <string name="txt_bill_date">Date</string>
+    <string name="txt_bill_name">Name</string>
+    <string name="txt_bill_amount">Amount</string>
+    <string name="txt_bill_iva">IVA</string>
+
+    <string name="btn_add_Client">Add</string>
+    <string name="btn_add_bill">Add</string>
+    <string name="title_addCliente">Add Client</string>
+    <string name="title_addbill">Add Billing Statement</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
