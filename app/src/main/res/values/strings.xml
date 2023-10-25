@@ -36,15 +36,12 @@
     </string-array>
 
     <string name="txt_user_LastName">Last Name</string>
-    <string name="txt_use_Name">Name</string>
+    <string name="txt_date">Date</string>
+    <string name="txt_name">Name</string>
+    <string name="txt_amount">Amount</string>
+    <string name="txt_iva">IVA</string>
 
-    <string name="txt_bill_date">Date</string>
-    <string name="txt_bill_name">Name</string>
-    <string name="txt_bill_amount">Amount</string>
-    <string name="txt_bill_iva">IVA</string>
-
-    <string name="btn_add_Client">Add</string>
-    <string name="btn_add_bill">Add</string>
+    <string name="btn_add">Add</string>
     <string name="title_addCliente">Add Client</string>
     <string name="title_addbill">Add Billing Statement</string>
 
