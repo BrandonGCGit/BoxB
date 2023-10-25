@@ -86,11 +86,12 @@ public class HomeFragment extends Fragment {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Toast.makeText(getContext(), "doc: " + document.getId(), Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getContext(), "doc: " + document.getId(), Toast.LENGTH_SHORT).show();
 ////                                Log.d(TAG, document.getId() + " => " + document.getData());
-//                                String nombre = document.getData().ge
-//                                client = (Client) document.getData();
-//                                listClients.add(client);
+                                String nombre = document.getString("name");
+                                String documentID = document.getString("documentID");
+                                client = new Client(nombre, documentID);
+                                listClients.add(client);
                             }
                             clientAdapter = new ClientAdapter(getContext(), listClients);
                             lstV_Home_listClients.setAdapter(clientAdapter);
@@ -101,42 +102,6 @@ public class HomeFragment extends Fragment {
                     }
                 });
 
-//        db.collection("Clients")
-//                .get()
-//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                        if (task.isSuccessful()) {
-//                            for (QueryDocumentSnapshot document : task.getResult()) {
-//                                Toast.makeText(getContext(), "Documento: " + document.getData(), Toast.LENGTH_SHORT).show();
-////                                Log.d(TAG, document.getId() + " => " + document.getData());
-//                            }
-//                        } else {
-//                            Toast.makeText(getContext(), "Error obtaining data", Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
-//        databaseReference.child("Client").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                //limpiar la lista
-//                listClients.clear();
-//
-//                client = new Client("DIANA", "21231321");
-//                listClients.add(client);
-//
-//                for(DataSnapshot objSnapshot: snapshot.getChildren()){
-//                    client = objSnapshot.getValue(Client.class);
-//                    listClients.add(client);
-//                    clientAdapter = new ClientAdapter(getContext(), listClients);
-//                    lstV_Home_listClients.setAdapter(clientAdapter);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+
     }//fin listaDatos
 }

@@ -38,6 +38,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import ucr.ac.cr.boxb.MainActivity;
 import ucr.ac.cr.boxb.R;
 import ucr.ac.cr.boxb.databinding.FragmentRegisterBinding;
 
@@ -124,6 +125,8 @@ public class RegisterFragment extends Fragment {
                                         FirebaseUser user = boxAuth.getCurrentUser();
                                         if (photoTemp!=null){
                                             addInformation(user);
+                                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                                            startActivity(intent);
                                         }else{
                                             Toast.makeText(getContext(), "Select an Image", Toast.LENGTH_SHORT).show();
                                         }

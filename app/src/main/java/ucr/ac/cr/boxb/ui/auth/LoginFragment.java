@@ -1,5 +1,6 @@
 package ucr.ac.cr.boxb.ui.auth;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -22,6 +23,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import ucr.ac.cr.boxb.MainActivity;
 import ucr.ac.cr.boxb.R;
 import ucr.ac.cr.boxb.databinding.FragmentDashboardBinding;
 import ucr.ac.cr.boxb.databinding.FragmentLoginBinding;
@@ -89,8 +91,13 @@ public class LoginFragment extends Fragment {
                             if (task.isSuccessful()) {
                                 // Sign in success
                                 FirebaseUser user = boxBAuth.getCurrentUser();
-                                Toast.makeText(getContext(), "User Logged In: " + user.getEmail(),
-                                        Toast.LENGTH_SHORT).show();
+                                if (user != null){
+                                    Toast.makeText(getContext(), "User Logged In: " + user.getEmail(),
+                                            Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                                    startActivity(intent);
+                                }
+
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Toast.makeText(getContext(), "Could not Login",
