@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    Button btn_Prueba_Login;
+    Button btn_Prueba_Login, button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         btn_Prueba_Login = binding.btnPruebaLogin;
+        button = binding.button;
+
 
         btn_Prueba_Login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +49,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, act_billing_statement.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+
     }
 
 }
