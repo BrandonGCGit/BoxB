@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bills_navigation"
+    app:startDestination="@id/sales_navigation">
+    <fragment
+        android:id="@+id/sales_navigation"
+        android:name="ucr.ac.cr.boxb.ui.billing.salesFragment"
+        android:label="fragment_sales"
+        tools:layout="@layout/fragment_sales" />
+    <fragment
+        android:id="@+id/purchases_navigation"
+        android:name="ucr.ac.cr.boxb.ui.billing.purchasesFragment"
+        android:label="fragment_purchases"
+        tools:layout="@layout/fragment_purchases" />
+    <fragment
+        android:id="@+id/expenses_navigation"
+        android:name="ucr.ac.cr.boxb.ui.billing.expensesFragment"
+        android:label="fragment_expenses"
+        tools:layout="@layout/fragment_expenses" />
+</navigation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/navigation_bills">
+
+    <fragment
+        android:id="@+id/navigation_bills"
+        android:name="ucr.ac.cr.boxb.ui.billing.billisFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_billis" />
+    <fragment
+        android:id="@+id/navigation_trial_balance"
+        android:name="ucr.ac.cr.boxb.ui.billing.trial_balanceFragment"
+        android:label="fragment_trial_balance"
+        tools:layout="@layout/fragment_trial_balance" />
+    <fragment
+        android:id="@+id/navigation_balance_sheet"
+        android:name="ucr.ac.cr.boxb.ui.billing.balance_sheetFragment"
+        android:label="fragment_balance_sheet"
+        tools:layout="@layout/fragment_balance_sheet" />
+    <fragment
+        android:id="@+id/navigation_income_statement"
+        android:name="ucr.ac.cr.boxb.ui.billing.income_statementFragment"
+        android:label="fragment_income_statement"
+        tools:layout="@layout/fragment_income_statement" />
+
+</navigation>

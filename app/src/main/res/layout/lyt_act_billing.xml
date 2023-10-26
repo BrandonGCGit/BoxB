@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:paddingTop="?attr/actionBarSize">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_bills"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtClientBill"
+        app:menu="@menu/bottom_nav_billing" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment_lyt_act_billing"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="374dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="60dp"
+        app:defaultNavHost="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_bills"
+        app:navGraph="@navigation/billing_navigation" />
+
+    <TextView
+        android:id="@+id/txtClientBill"
+        android:layout_width="304dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="36dp"
+        android:drawableTint="#D6CC99"
+        android:fontFamily="sans-serif-medium"
+        android:text="Carlos Smith"
+        android:textAlignment="gravity"
+        android:textAllCaps="false"
+        android:textColor="#D6CC99"
+        android:textSize="40sp"
+        app:autoSizeTextType="none"
+        app:drawableStartCompat="@drawable/baseline_person_outline_60"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add_bill"
+        android:layout_width="79dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#445D48"
+        android:drawableTop="@drawable/add"
+        android:drawableTint="#001524"
+        app:layout_constraintTop_toBottomOf="@+id/nav_host_fragment_lyt_act_billing"
+        tools:layout_editor_absoluteX="184dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

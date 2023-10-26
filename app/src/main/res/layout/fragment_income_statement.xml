@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.billing.income_statementFragment">
+
+    <TableLayout
+        android:layout_width="347dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:stretchColumns="1">
+
+        <View
+            android:layout_width="127dp"
+            android:layout_height="2dip"
+            android:background="#FF909090"
+            android:backgroundTint="#D6CC99"
+            android:foregroundTint="#D6CC99"
+            android:textAlignment="center" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:padding="3dip"
+                android:text="Ventas"
+                android:textAlignment="textStart"
+                android:textColor="#D6CC99" />
+
+            <TextView
+                android:id="@+id/txtTotalVentasIS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/soft_green" />
+
+        </TableRow>
+        <View
+            android:layout_width="127dp"
+            android:layout_height="2dip"
+            android:background="#FF909090"
+            android:backgroundTint="#D6CC99"
+            android:foregroundTint="#D6CC99"
+            android:textAlignment="center" />
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compras"
+                android:textColor="#D6CC99" />
+
+            <TextView
+                android:id="@+id/txtTotalComprasIS"
+                android:layout_width="127dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:textAlignment="center"
+                android:textColor="#D6CC99" />
+
+        </TableRow>
+        <View
+            android:layout_width="127dp"
+            android:layout_height="2dip"
+            android:background="#FF909090"
+            android:backgroundTint="#D6CC99"
+            android:foregroundTint="#D6CC99"
+            android:textAlignment="center" />
+        <TableRow>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Utilidades Brutas"
+                android:textColor="#D6CC99" />
+
+            <TextView
+                android:id="@+id/txtTotalUtilidadesIS"
+                android:layout_width="127dp"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:textAlignment="center"
+                android:textColor="#D6CC99"
+                android:textColorHint="#D6CC99" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="127dp"
+            android:layout_height="2dip"
+            android:background="#FF909090"
+            android:backgroundTint="#D6CC99"
+            android:foregroundTint="#D6CC99"
+            android:textAlignment="center" />
+
+    </TableLayout>
+</FrameLayout>
