@@ -7,6 +7,7 @@
     <string name="title_register">Sign Up</string>
     <string name="title_greeting">Get Started</string>
     <string name="title_clients">Clients</string>
+    <string name="title_logout">Log Out</string>
 
 
     <string name="txt_username">Username</string>

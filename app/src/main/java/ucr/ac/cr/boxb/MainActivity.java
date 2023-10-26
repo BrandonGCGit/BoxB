@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
+    FirebaseAuth boxBAuth;
     Button btn_Prueba_Login, button;
 
     @Override
@@ -29,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        initializeFirebase();
+        //Initialize the authentification
+        boxBAuth = FirebaseAuth.getInstance();
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -44,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         btn_Prueba_Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boxBAuth.signOut();
+                Toast.makeText(MainActivity.this, "User sign out", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, act_Auth.class);
                 startActivity(intent);
             }
@@ -61,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void initializeFirebase(){
+        FirebaseApp.initializeApp(MainActivity.this);
     }
 
     private void replaceFragment(HomeFragment homeFragment) {
