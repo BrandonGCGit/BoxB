@@ -4,13 +4,13 @@
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/title_sales" />
+        android:title="TODO" />
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/title_purchases" />
+        android:title="TODO" />
     <item
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:title="@string/title_Expenses" />
+        android:title="TODO" />
 </menu>

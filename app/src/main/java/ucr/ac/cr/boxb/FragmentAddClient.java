@@ -35,7 +35,7 @@ public class FragmentAddClient extends Fragment {
 
     private FirebaseAuth mAuth;
     // Initialize Firebase Auth
-    private EditText txtName, txtLastName, txtEmail;
+    private EditText txtName, txtLastName, txtEmail, txtID;
 
     private String uid;
 
@@ -52,53 +52,53 @@ public class FragmentAddClient extends Fragment {
         txtEmail = binding.txtEmailAddClient;
         txtName = binding.txtNameAddClient;
         txtLastName = binding.txtLastNameAddClient;
+        txtID = binding.txtAddClientCedula;
+
 
         btn_addClient = binding.btnClientAdd;
 
-        // Create a new user with a first and last name
-        Map<String, Object> user = new HashMap<>();
-        user.put("documentID", uid);
-        user.put("name", txtName.getText().toString());
-
-// Add a new document with a generated ID
-        db.collection("Clients")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w(TAG, "Error adding document", e);
-                    }
-                });
-
         btn_addClient.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
-                // Create a new user with a first and last name
-                Map<String, Object> user = new HashMap<>();
-                user.put("documentID", uid);
-                user.put("name", txtName.getText().toString());
+
+                if (txtName.getText().toString().isEmpty()){
+                    txtName.setError("Fill all the blanks");
+                } else if (txtID.getText().toString().isEmpty()) {
+                    txtID.setError("Fill all the blanks");
+                } else if (txtLastName.getText().toString().isEmpty()) {
+                    txtLastName.setError("Fill all the blanks");
+                } else if (txtEmail.getText().toString().isEmpty()) {
+                    txtEmail.setError("Fill all the blanks");
+                }else{
+
+                    // Create a new user with a first and last name
+                    Map<String, Object> user = new HashMap<>();
+                    user.put("documentID", txtID.getText().toString());
+                    user.put("name", txtName.getText().toString());
+                    user.put("lastName", txtLastName.getText().toString());
+                    user.put("email", txtEmail.getText().toString());
+                    user.put("uid_user", uid);
 
 // Add a new document with a generated ID
-                db.collection("Clients")
-                        .add(user)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.w(TAG, "Error adding document", e);
-                            }
-                        });
+                    db.collection("Clients")
+                            .add(user)
+                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                @Override
+                                public void onSuccess(DocumentReference documentReference) {
+                                    Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                                    limpiar();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w(TAG, "Error adding document", e);
+                                }
+                            });
+                }
+
             }
         });
 
@@ -120,5 +120,12 @@ public class FragmentAddClient extends Fragment {
             System.out.println("El usuario no esta login");
 
         }
+    }
+
+    public void limpiar(){
+        txtName.setText("");
+        txtID.setText("");
+        txtLastName.setText("");
+        txtEmail.setText("");
     }
 }
