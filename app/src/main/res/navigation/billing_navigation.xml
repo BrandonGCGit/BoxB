@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation2"
-    app:startDestination="@+id/navigation_bills">
+    app:startDestination="@+id/navigation_billing_statements">
 
     <fragment
-        android:id="@+id/navigation_bills"
-        android:name="ucr.ac.cr.boxb.ui.billing.billisFragment"
+        android:id="@+id/navigation_billing_statements"
+        android:name="ucr.ac.cr.boxb.ui.billing.billing_statementsFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_billis" />
+        tools:layout="@layout/fragment_billing_statements" />
     <fragment
         android:id="@+id/navigation_trial_balance"
         android:name="ucr.ac.cr.boxb.ui.billing.trial_balanceFragment"

@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
         btn_Prueba_Login = binding.btnPruebaLogin;
-//        button = binding.button;
+        button = binding.btnTry;
 
 
         btn_Prueba_Login.setOnClickListener(new View.OnClickListener() {
@@ -57,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, act_billing_statement.class);
-//                startActivity(intent);
-//            }
-//        });
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, act_billing_statement.class);
+                startActivity(intent);
+            }
+        });
 
 
 

@@ -24,9 +24,7 @@
         <activity
             android:name=".act_billing_statement"
             android:exported="false" />
-        <activity
-            android:name=".act_billing_statements"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />

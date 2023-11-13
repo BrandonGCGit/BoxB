@@ -10,6 +10,12 @@
     <string name="title_logout">Log Out</string>
 
 
+
+    <string name="title_sales">Sales</string>
+    <string name="title_purchases">Purchases</string>
+    <string name="title_expenses">Expenses</string>
+
+
     <string name="txt_username">Username</string>
     <string name="txt_email">Email</string>
     <string name="txt_password">Password</string>

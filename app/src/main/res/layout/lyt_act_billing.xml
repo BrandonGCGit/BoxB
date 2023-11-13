@@ -37,7 +37,7 @@
         android:layout_width="304dp"
         android:layout_height="60dp"
         android:layout_marginTop="36dp"
-        android:drawableTint="#D6CC99"
+        app:drawableTint="#D6CC99"
         android:fontFamily="sans-serif-medium"
         android:text="Carlos Smith"
         android:textAlignment="gravity"

@@ -5,109 +5,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.billing.billing_statementsFragment">
+    tools:context=".ui.billing.billing_statementsFragment" >
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_billing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toTopOf="@+id/nav_host_fragment_activity_main2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/nav_bills">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="1">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-        <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Open..."
-                android:textColor="#D6CC99" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="Ctrl-O"
-                android:textColor="#D6CC99" />
-
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Save..."
-                android:textColor="#D6CC99" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="Ctrl-S"
-                android:textColor="#D6CC99" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Save As..."
-                android:textColor="#D6CC99" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="Ctrl-Shift-S"
-                android:textColor="#D6CC99" />
-
-        </TableRow>
-
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
-
-        <TableRow>
-
-            <TextView
-                android:padding="3dip"
-                android:text="X"
-                android:textColor="#D6CC99" />
-
-            <TextView
-                android:padding="3dip"
-                android:text="Import..."
-                android:textColor="#D6CC99" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:padding="3dip"
-                android:text="X"
-                android:textColor="#D6CC99" />
-
-            <TextView
-                android:padding="3dip"
-                android:text="Export..."
-                android:textColor="#D6CC99" />
-
-            <TextView
-                android:gravity="right"
-                android:padding="3dip"
-                android:text="Ctrl-E"
-                android:textColor="#D6CC99" />
-        </TableRow>
-
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
-
-        <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dip"
-                android:text="Quit"
-                android:textColor="#D6CC99" />
-        </TableRow>
-    </TableLayout>
+    <fragment
+        android:id="@+id/nav_host_fragment_activity_main2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="411dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="144dp"
+        app:defaultNavHost="true"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/bills_navigation" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 

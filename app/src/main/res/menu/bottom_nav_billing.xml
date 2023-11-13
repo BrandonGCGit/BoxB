@@ -2,18 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home_billing_statements"
+        android:id="@+id/billing_statements"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="TODO" />
+        android:title="Billing Statement" />
 
     <item
-        android:id="@+id/navigation_add_bill"
+        android:id="@+id/trial_blance"
         android:icon="@android:drawable/ic_menu_add"
-        android:title="TODO" />
+        android:title="Trial Balance" />
 
     <item
         android:id="@+id/balance_sheets"
         android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="TODO" />
+        android:title="Balance Sheets" />
+    <item
+        android:id="@+id/income_statement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_person_outline_60"
+        android:title="Income Statement" />
 
 </menu>

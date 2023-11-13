@@ -10,7 +10,6 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import ucr.ac.cr.boxb.databinding.ActivityMainBinding;
 import ucr.ac.cr.boxb.databinding.LytActBillingStatementBinding;
 
 public class act_billing_statement extends AppCompatActivity {
@@ -27,7 +26,7 @@ public class act_billing_statement extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.home_billing_statements, R.id.navigation_add_bill, R.id.balance_sheets)
+                R.id.billing_statements, R.id.trial_blance, R.id.balance_sheets, R.id.income_statement)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_billing_statement);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
