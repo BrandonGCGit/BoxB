@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     FirebaseAuth boxBAuth;
-    Button btn_Prueba_Login, button;
+    Button btn_Prueba_Login, btn_Billing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
         btn_Prueba_Login = binding.btnPruebaLogin;
-        button = binding.btnTry;
+        btn_Billing = binding.btnTry;
 
 
         btn_Prueba_Login.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        button.setOnClickListener(new View.OnClickListener() {
+        btn_Billing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, act_billing_statement.class);
