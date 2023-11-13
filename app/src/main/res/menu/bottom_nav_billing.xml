@@ -2,11 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/billing_statements"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="Billing Statement" />
-
-    <item
         android:id="@+id/trial_blance"
         android:icon="@android:drawable/ic_menu_add"
         android:title="Trial Balance" />
