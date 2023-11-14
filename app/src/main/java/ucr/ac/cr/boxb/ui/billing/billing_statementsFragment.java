@@ -9,7 +9,7 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 
-import ucr.ac.cr.boxb.databinding.FragmentBillingStatementsBinding;
+import ucr.ac.cr.boxb.databinding.LytActBillingStatementBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +18,7 @@ import ucr.ac.cr.boxb.databinding.FragmentBillingStatementsBinding;
  */
 public class billing_statementsFragment extends Fragment {
 
-    private FragmentBillingStatementsBinding binding;
+    private LytActBillingStatementBinding binding;
     NavController navController;
     Button btn_Greet_getStarted;
 
@@ -67,7 +67,7 @@ public class billing_statementsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         // Inflate the layout for this fragment
-        binding =  FragmentBillingStatementsBinding.inflate(inflater, container, false);
+        binding =  LytActBillingStatementBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         return root;
 

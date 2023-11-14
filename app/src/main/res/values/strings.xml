@@ -31,10 +31,9 @@
     <string name="txt_already_account">Have an account?</string>
 
     <string-array name="types">
-        <item>type 1</item>
-        <item>type 2</item>
-        <item>type 3</item>
-        <item>type 4</item>
+        <item>Sale</item>
+        <item>Purchase</item>
+        <item>Expense</item>
     </string-array>
 
     <string-array name="pays">
