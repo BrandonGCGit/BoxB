@@ -32,8 +32,8 @@
     <fragment
         android:id="@+id/nav_host_fragment_billing_statement"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="414dp"
-        android:layout_height="335dp"
+        android:layout_width="413dp"
+        android:layout_height="229dp"
         android:layout_marginTop="24dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,8 +46,8 @@
 
     <TextView
         android:id="@+id/txtClientBill"
-        android:layout_width="304dp"
-        android:layout_height="60dp"
+        android:layout_width="395dp"
+        android:layout_height="57dp"
         android:fontFamily="sans-serif-medium"
         android:text="Carlos Smith"
         android:textAlignment="gravity"
@@ -58,12 +58,11 @@
         app:drawableStartCompat="@drawable/baseline_person_outline_60"
         app:drawableTint="#D6CC99"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragmentContainerView" />
 
     <Button
-        android:id="@+id/add_bill"
+        android:id="@+id/btn_Billing_addBill"
         android:layout_width="79dp"
         android:layout_height="81dp"
         android:backgroundTint="#445D48"
@@ -72,8 +71,10 @@
         android:drawableTint="#001524"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nav_host_fragment_billing_statement" />
+        app:layout_constraintTop_toBottomOf="@+id/nav_host_fragment_billing_statement"
+        app:layout_constraintVertical_bias="0.156" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

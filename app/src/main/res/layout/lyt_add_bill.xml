@@ -7,11 +7,13 @@
     android:background="@color/blue">
 
     <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="379dp"
+        android:layout_height="680dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/border"
         android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,17 +30,20 @@
             android:textSize="24sp" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spn_type_add_bill"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="25dp"
             android:background="@drawable/border"
+            android:dropDownSelector="@color/soft_white"
             android:entries="@array/types"
+            android:foregroundTint="@color/soft_white"
             android:padding="15dp"
             android:popupBackground="@color/soft_white"
-            android:spinnerMode="dialog" />
+            android:spinnerMode="dialog"
+            android:textColor="@color/white" />
 
         <Spinner
             android:id="@+id/spinner2"
@@ -64,9 +69,10 @@
             android:drawableEnd="@drawable/icono_usuario"
             android:ems="10"
             android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/txt_name"
             android:inputType="text"
-            android:text="@string/txt_name"
             android:textColor="#FFFFFF"
+            android:textColorHint="@color/white"
             android:textSize="16sp" />
 
         <EditText
@@ -80,9 +86,10 @@
             android:drawableEnd="@drawable/icon_calen"
             android:ems="10"
             android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/txt_date"
             android:inputType="text"
-            android:text="@string/txt_date"
             android:textColor="#FFFFFF"
+            android:textColorHint="@color/white"
             android:textSize="16sp" />
 
         <EditText
@@ -96,9 +103,10 @@
             android:drawableEnd="@drawable/icon_cuenta"
             android:ems="10"
             android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/txt_amount"
             android:inputType="text"
-            android:text="@string/txt_amount"
             android:textColor="#FFFFFF"
+            android:textColorHint="@color/white"
             android:textSize="16sp" />
 
         <EditText
@@ -112,13 +120,14 @@
             android:drawableEnd="@drawable/icon_cuenta"
             android:ems="10"
             android:fontFamily="@font/open_sans_semibold"
+            android:hint="@string/txt_iva"
             android:inputType="text"
-            android:text="@string/txt_iva"
             android:textColor="#FFFFFF"
+            android:textColorHint="@color/white"
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/btn_bill_add"
+            android:id="@+id/btn_add_bill"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"

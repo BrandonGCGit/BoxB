@@ -49,6 +49,7 @@ public class ClientAdapter extends BaseAdapter {
             view = layoutInflater.inflate(R.layout.client_adapter, null);
         }
 
+
         TextView txt_cedula_adapter = view.findViewById(R.id.txt_cedula_adapter);
         TextView txt_name_adapter = view.findViewById(R.id.txt_name_adapter);
 

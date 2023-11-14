@@ -1,9 +1,11 @@
 package ucr.ac.cr.boxb.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,6 +32,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+import ucr.ac.cr.boxb.act_billing_statement;
 import ucr.ac.cr.boxb.databinding.FragmentHomeBinding;
 import ucr.ac.cr.boxb.model.Client;
 
@@ -72,6 +75,17 @@ public class HomeFragment extends Fragment {
         //Initialize components
         lstV_Home_listClients = binding.lstVHomeListClients;
 
+        lstV_Home_listClients.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getContext(), listClients.get(position).getIdClient(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), act_billing_statement.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("IdClient", listClients.get(position).getIdClient());
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
     }//End onViewCreated
 
@@ -94,9 +108,10 @@ public class HomeFragment extends Fragment {
                             for (QueryDocumentSnapshot document : task.getResult()) {
 //                                Toast.makeText(getContext(), "doc: " + document.getId(), Toast.LENGTH_SHORT).show();
 ////                                Log.d(TAG, document.getId() + " => " + document.getData());
+                                String idClient = document.getId();
                                 String nombre = document.getString("name");
                                 String documentID = document.getString("documentID");
-                                client = new Client(nombre, documentID);
+                                client = new Client(idClient, nombre, documentID);
                                 listClients.add(client);
                             }
                             clientAdapter = new ClientAdapter(getContext(), listClients);

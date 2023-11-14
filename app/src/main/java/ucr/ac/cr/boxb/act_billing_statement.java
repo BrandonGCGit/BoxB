@@ -9,14 +9,29 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import ucr.ac.cr.boxb.databinding.LytActBillingStatementBinding;
+import ucr.ac.cr.boxb.ui.utils.Popup_AddBills;
 
 public class act_billing_statement extends AppCompatActivity {
     private LytActBillingStatementBinding binding;
+    FirebaseFirestore db;
+    Popup_AddBills popupAddBills = new Popup_AddBills();
+    Button btn_Billing_addBill;
+    TextView txtClientBill;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +39,11 @@ public class act_billing_statement extends AppCompatActivity {
 
         binding = LytActBillingStatementBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        db = FirebaseFirestore.getInstance();
+
+        txtClientBill = findViewById(R.id.txtClientBill);
+        btn_Billing_addBill = findViewById(R.id.btn_Billing_addBill);
 
         BottomNavigationView navView = findViewById(R.id.nav_stantement);
         // Passing each menu ID as a set of Ids because each
@@ -56,6 +76,55 @@ public class act_billing_statement extends AppCompatActivity {
                 return false;
             }
         });
+
+        //Get Bundle with the info of the client
+        Bundle bundle = this.getIntent().getExtras();
+        if (bundle != null) {
+            String clientId = bundle.getString("IdClient");
+
+
+            if (clientId != null) {
+                // Reference from Firestore
+                DocumentReference docRef = db.collection("Clients").document(clientId);
+
+                // Get Document
+                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+
+                                Toast.makeText(act_billing_statement.this, "" + document.getData(), Toast.LENGTH_SHORT).show();
+                                String clientName = document.getString("name") + " " + document.getString("lastName");
+                                txtClientBill.setText(clientName);
+                            } else {
+                                Toast.makeText(act_billing_statement.this, "Could not find document", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(act_billing_statement.this, "Error getting the document " + task.getException(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+
+                //Show popUp to create a Bill
+                btn_Billing_addBill.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popupAddBills.showPopupAddBill(act_billing_statement.this, clientId);
+                    }
+                });
+
+
+
+            } else {
+                Toast.makeText(act_billing_statement.this, "Id client is null", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+
 
 
     }
