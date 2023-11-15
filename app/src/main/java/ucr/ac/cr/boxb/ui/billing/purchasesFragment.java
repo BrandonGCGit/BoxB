@@ -44,7 +44,7 @@ public class purchasesFragment extends Fragment {
 
     private Bill bill;
 
-    private final Object lock = new Object(); // Objeto de bloqueo para la sincronización
+    private String clientId, type;
 
 
     public purchasesFragment(){
@@ -64,29 +64,21 @@ public class purchasesFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    //    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        binding = FragmentPurchasesBinding.inflate(inflater, container,false);
-//        View root = binding.getRoot();
-//
-//        addTable();
-//        fillList();
-//
-//        root = inflater.inflate(R.layout.fragment_purchases,container,false);
-//        return root;
-//    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment using View Binding
         binding = FragmentPurchasesBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        Bundle args = getArguments();
+        clientId = args.getString("clientId");
+        type = args.getString("type");
+
+        System.out.println("type = " + type);
+
         // Fill the list of purchases
         fillList();
-
-
         // Return the root view
         return root;
     }
@@ -149,27 +141,6 @@ public class purchasesFragment extends Fragment {
         tvTotal.setPadding(paddingInPx,paddingInPx,paddingInPx,paddingInPx);
         tvTotal.setTextColor(color);
 
-        //Atributes Table Content
-//        android:id="@+id/textView20"
-//        android:layout_width="wrap_content"
-//        android:layout_height="wrap_content"
-//        android:padding="3dip"
-//        android:text="04-03-23"
-//        android:textColor="#D6CC99" />
-        //Data of the table
-//        for (int i = 0; i < listPurchases.size(); i++) {
-//            TableRow tbrow = new TableRow(binding.getRoot().getContext());
-//            TextView tvDateColumn = new TextView(binding.getRoot().getContext());
-//            tvDateColumn.setText(listPurchases.get(i).getDate());
-//            tvDateColumn.setTextColor(color);
-//            tbrow.addView(tvDateColumn);
-//
-//            stk.addView(tbrow);
-////        }
-//        <!--        <View-->
-//            <!--            android:layout_height="2dip"-->
-//            <!--            android:background="#D7CE9E" />-->
-
         stk.addView(tbRow0);
 
         GradientDrawable borderDrawable = new GradientDrawable();
@@ -216,14 +187,15 @@ public class purchasesFragment extends Fragment {
 
             stk.addView(tbrow);
         }
-
-
     }
 
     public void fillList(){
 
+        listPurchases.clear();
 
         db.collection("Bills")
+                .whereEqualTo("clientId", clientId)
+                .whereEqualTo("type", type)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>()
                 {

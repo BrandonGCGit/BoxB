@@ -32,6 +32,8 @@ public class act_billing_statement extends AppCompatActivity {
     Button btn_Billing_addBill;
     TextView txtClientBill;
 
+    String clientId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,16 +62,21 @@ public class act_billing_statement extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
+                Bundle bundle = new Bundle();
+                bundle.putString("clientId", clientId );
                 if (id == R.id.navigation_sales) {
                     NavController navController = Navigation.findNavController(act_billing_statement.this, R.id.nav_host_fragment_billing_statement);
-                    navController.navigate(R.id.sales_navigation);
+                    bundle.putString("type", "Sale" );
+                    navController.navigate(R.id.purchases_navigation, bundle);
                 }else if (id == R.id.navigation_purchases){
                     NavController navController = Navigation.findNavController(act_billing_statement.this, R.id.nav_host_fragment_billing_statement);
-                    navController.navigate(R.id.purchases_navigation);
+                    bundle.putString("type", "Purchase" );
+                    navController.navigate(R.id.purchases_navigation, bundle);
                     return true;
                 }else if (id == R.id.navigation_expenses){
                     NavController navController = Navigation.findNavController(act_billing_statement.this, R.id.nav_host_fragment_billing_statement);
-                    navController.navigate(R.id.expenses_navigation);
+                    bundle.putString("type", "Expense");
+                    navController.navigate(R.id.purchases_navigation, bundle);
                     return true;
                 }
 
@@ -80,7 +87,7 @@ public class act_billing_statement extends AppCompatActivity {
         //Get Bundle with the info of the client
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null) {
-            String clientId = bundle.getString("IdClient");
+            clientId = bundle.getString("IdClient");
 
 
             if (clientId != null) {
