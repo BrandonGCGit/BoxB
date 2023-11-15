@@ -15,110 +15,115 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp" />
 
-    <TableLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stretchColumns="*">
-
-        <TableRow>
-
-            <TextView
-                android:padding="3dip"
-                android:text="Date"
-                android:textColor="#D6CC99" />
-
-            <TextView
-                android:padding="3dip"
-                android:text="Name"
-                android:textColor="#E0D8B3" />
-
-            <TextView
-                android:padding="3dip"
-                android:text="Amount"
-                android:textColor="#E0D8B3" />
-
-            <TextView
-                android:padding="3dip"
-                android:text="IVA"
-                android:textColor="#E0D8B3" />
-
-            <TextView
-                android:padding="3dip"
-                android:text="Total"
-                android:textColor="#D6CC99" />
-
-        </TableRow>
-
-        <View
-            android:layout_height="2dip"
-            android:background="#D7CE9E" />
-
-        <TableRow
+        android:layout_height="match_parent">
+        <TableLayout
+            android:id="@+id/tl_fragmentPurchases_tablePurchases"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="3dip"
-                android:text="04-03-23"
-                android:textColor="#D6CC99" />
+            <!--        <TableRow>-->
 
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="3dip"
-                android:text="Coca Cola S.A"
-                android:textColor="#E0D8B3" />
+            <!--            <TextView-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="Date"-->
+            <!--                android:textColor="#D6CC99" />-->
 
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="3dip"
-                android:text="₡122.000"
-                android:textColor="#E0D8B3" />
+            <!--            <TextView-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="Name"-->
+            <!--                android:textColor="#E0D8B3" />-->
 
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="3dip"
-                android:text="₡12.000"
-                android:textColor="#E0D8B3" />
+            <!--            <TextView-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="Amount"-->
+            <!--                android:textColor="#E0D8B3" />-->
 
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="3dip"
-                android:text="₡134.000"
-                android:textColor="#D6CC99" />
+            <!--            <TextView-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="IVA"-->
+            <!--                android:textColor="#E0D8B3" />-->
 
-        </TableRow>
+            <!--            <TextView-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="Total"-->
+            <!--                android:textColor="#D6CC99" />-->
 
-        <View
-            android:layout_height="2dip"
-            android:background="#D7CE9E" />
+            <!--        </TableRow>-->
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <!--        <View-->
+            <!--            android:layout_height="2dip"-->
+            <!--            android:background="#D7CE9E" />-->
 
-            <TextView
-                android:layout_column="3"
-                android:padding="3dip"
-                android:text="Total"
-                android:textColor="#D6CC99" />
+            <!--        <TableRow-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent">-->
 
-            <TextView
-                android:padding="3dip"
-                android:text="₡134.000"
-                android:textColor="#D6CC99" />
+            <!--            <TextView-->
+            <!--                android:id="@+id/textView20"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="04-03-23"-->
+            <!--                android:textColor="#D6CC99" />-->
 
-        </TableRow>
+            <!--            <TextView-->
+            <!--                android:id="@+id/textView21"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="Coca Cola S.A"-->
+            <!--                android:textColor="#E0D8B3" />-->
 
-    </TableLayout>
+            <!--            <TextView-->
+            <!--                android:id="@+id/textView22"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="₡122.000"-->
+            <!--                android:textColor="#E0D8B3" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/textView23"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="₡12.000"-->
+            <!--                android:textColor="#E0D8B3" />-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/textView24"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="₡134.000"-->
+            <!--                android:textColor="#D6CC99" />-->
+
+            <!--        </TableRow>-->
+
+            <!--        <View-->
+            <!--            android:layout_height="2dip"-->
+            <!--            android:background="#D7CE9E" />-->
+
+            <!--        <TableRow-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="match_parent">-->
+
+            <!--            <TextView-->
+            <!--                android:layout_column="3"-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="Total"-->
+            <!--                android:textColor="#D6CC99" />-->
+
+            <!--            <TextView-->
+            <!--                android:padding="3dip"-->
+            <!--                android:text="₡134.000"-->
+            <!--                android:textColor="#D6CC99" />-->
+
+            <!--        </TableRow>-->
+
+        </TableLayout>
+    </ScrollView>
+
 </FrameLayout>

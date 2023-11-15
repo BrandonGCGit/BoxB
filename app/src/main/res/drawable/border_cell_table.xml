@@ -1,0 +1,18 @@
+<!-- border_bottom.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:bottom="2dp"> <!-- Ajusta el grosor del borde aquí -->
+        <shape>
+            <solid android:color="@color/soft_green" /> <!-- Color de fondo -->
+        </shape>
+    </item>
+    <item android:top="1dp"> <!-- Ajusta la distancia del texto al borde aquí -->
+        <shape>
+            <solid android:color="@color/soft_green" /> <!-- Color del fondo, el mismo que el fondo principal -->
+        </shape>
+    </item>
+    <item android:bottom="1dp"> <!-- Ajusta la distancia entre el borde y el fondo principal aquí -->
+        <shape>
+            <solid android:color="@color/soft_green" /> <!-- Color del borde -->
+        </shape>
+    </item>
+</layer-list>
