@@ -6,10 +6,11 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="367dp"
-        android:layout_height="97dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="337dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/adapter_border"
+        android:foregroundGravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,17 +18,16 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="52dp"
-            android:layout_height="80dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
+            android:layout_width="49dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             app:srcCompat="@drawable/icon_user_black" />
 
         <LinearLayout
-            android:layout_width="138dp"
-            android:layout_height="match_parent"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -35,28 +35,27 @@
                 android:id="@+id/txt_name_adapter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/open_sans"
+                android:fontFamily="@font/quicksand_medium"
                 android:text="Carlos Smith "
-                android:textColor="@color/blue" />
+                android:textColor="@color/blue"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/txt_cedula_adapter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/open_sans"
                 android:text="Cedula: 32242934"
-                android:textColor="@color/blue" />
+                android:textColor="@color/blue"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_width="54dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             app:srcCompat="@drawable/icon_wallet" />
     </LinearLayout>
