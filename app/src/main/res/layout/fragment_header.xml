@@ -14,7 +14,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_back"
+            android:id="@+id/btn_Header_goBack"
             android:layout_width="49dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -42,7 +42,7 @@
             app:iconTint="#D6CC99" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttin"
             android:layout_width="53dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"

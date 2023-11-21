@@ -54,7 +54,7 @@ public class act_billing_statement extends AppCompatActivity {
                 R.id.navigation_sales, R.id.navigation_purchases, R.id.navigation_expenses)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_billing_statement);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navStantement, navController);
 
 

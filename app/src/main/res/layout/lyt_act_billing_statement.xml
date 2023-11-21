@@ -18,16 +18,19 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_stantement"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:backgroundTint="@color/blue"
         app:itemIconTint="@color/soft_green"
+        app:itemTextColor="@color/soft_green"
+        android:elevation="8dp"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        app:menu="@menu/nav_bills" />
+        app:menu="@menu/nav_bills"
+        app:labelVisibilityMode="selected"/>
 
     <fragment
         android:id="@+id/nav_host_fragment_billing_statement"

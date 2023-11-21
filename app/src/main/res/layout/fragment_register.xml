@@ -11,39 +11,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="65dp"
-            android:layout_height="86dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/logo"
-            app:layout_constraintBottom_toTopOf="@+id/cardView2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="386dp"
+            android:layout_height="603dp"
             app:cardBackgroundColor="#00FF0000"
             app:cardCornerRadius="15dp"
             app:cardElevation="0dp"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="false"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
-                android:layout_width="376dp"
-                android:layout_height="519dp"
+                android:layout_width="match_parent"
+                android:layout_height="602dp"
 
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="30dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="49dp"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/logo" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -170,7 +165,6 @@
                 android:textColor="@color/green"
                 android:textSize="20sp" />
         </LinearLayout>
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
