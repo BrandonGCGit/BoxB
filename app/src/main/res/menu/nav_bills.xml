@@ -5,15 +5,18 @@
         android:id="@+id/navigation_sales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_currency_exchange_24"
         android:title="@string/title_sales" />
     <item
         android:id="@+id/navigation_purchases"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_shopping_cart_checkout_24"
         android:title="@string/title_purchases" />
     <item
         android:id="@+id/navigation_expenses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_receipt_24"
         android:title="@string/title_expenses" />
 </menu>

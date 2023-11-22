@@ -3,7 +3,6 @@
 
     <item
         android:id="@+id/trial_blance"
-        android:icon="@android:drawable/ic_menu_add"
         android:title="Trial Balance" />
 
     <item

@@ -109,7 +109,7 @@ public class HomeFragment extends Fragment {
 //                                Toast.makeText(getContext(), "doc: " + document.getId(), Toast.LENGTH_SHORT).show();
 ////                                Log.d(TAG, document.getId() + " => " + document.getData());
                                 String idClient = document.getId();
-                                String nombre = document.getString("name");
+                                String nombre = document.getString("name") +" "+ document.getString("lastName");
                                 String documentID = document.getString("documentID");
                                 client = new Client(idClient, nombre, documentID);
                                 listClients.add(client);

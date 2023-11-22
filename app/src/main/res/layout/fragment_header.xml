@@ -8,35 +8,41 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_back"
+            android:id="@+id/btn_Header_goBack"
             android:layout_width="49dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:backgroundTint="#00FFFFFF"
             app:icon="@drawable/baseline_arrow_back_ios_24"
             app:iconTint="#D6CC99" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="232dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
             android:text="Billing Statements"
             android:textColor="#D6CC99"
-            android:textSize="30sp" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btn_notifications"
             android:layout_width="53dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
             android:backgroundTint="#00FFFFFF"
             app:icon="@drawable/ic_notifications_black_24dp"
             app:iconTint="#D6CC99" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttin"
             android:layout_width="53dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
