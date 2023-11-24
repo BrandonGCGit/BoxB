@@ -44,26 +44,26 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-        btn_Prueba_Login = binding.btnPruebaLogin;
-        btn_Billing = binding.btnTry;
+//        btn_Prueba_Login = binding.btnPruebaLogin;
+//        btn_Billing = binding.btnTry;
 
 
-        btn_Prueba_Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boxBAuth.signOut();
-                Toast.makeText(MainActivity.this, "User sign out", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(MainActivity.this, act_Auth.class);
-                startActivity(intent);
-            }
-        });
-        btn_Billing.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, act_billing_statement.class);
-                startActivity(intent);
-            }
-        });
+//        btn_Prueba_Login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                boxBAuth.signOut();
+//                Toast.makeText(MainActivity.this, "User sign out", Toast.LENGTH_SHORT).show();
+//                Intent intent = new Intent(MainActivity.this, act_Auth.class);
+//                startActivity(intent);
+//            }
+//        });
+//        btn_Billing.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, act_billing_statement.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
 

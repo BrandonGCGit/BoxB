@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,6 +41,7 @@ public class HomeFragment extends Fragment {
 
     // Write a message to the database
     FirebaseFirestore db;
+    FirebaseAuth boxBAuth;
 
     Client client;
     ClientAdapter clientAdapter;
@@ -64,6 +66,7 @@ public class HomeFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         db = FirebaseFirestore.getInstance();
+        boxBAuth = FirebaseAuth.getInstance();
 //        fillList();
 
     }//End onCreate
@@ -106,13 +109,16 @@ public class HomeFragment extends Fragment {
                         if (task.isSuccessful()) {
                             listClients.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-//                                Toast.makeText(getContext(), "doc: " + document.getId(), Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getContext(), "doc: " + document.getString("uid_user"), Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(getContext(), "user: " + boxBAuth.getUid(), Toast.LENGTH_SHORT).show();
 ////                                Log.d(TAG, document.getId() + " => " + document.getData());
-                                String idClient = document.getId();
-                                String nombre = document.getString("name") +" "+ document.getString("lastName");
-                                String documentID = document.getString("documentID");
-                                client = new Client(idClient, nombre, documentID);
-                                listClients.add(client);
+                                if (document.getString("uid_user").equalsIgnoreCase(boxBAuth.getUid().toString())){
+                                    String idClient = document.getId();
+                                    String nombre = document.getString("name") +" "+ document.getString("lastName");
+                                    String documentID = document.getString("documentID");
+                                    client = new Client(idClient, nombre, documentID);
+                                    listClients.add(client);
+                                }
                             }
                             clientAdapter = new ClientAdapter(getContext(), listClients);
                             lstV_Home_listClients.setAdapter(clientAdapter);

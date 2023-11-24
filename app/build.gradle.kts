@@ -55,6 +55,8 @@ dependencies {
     // Import the Firestore
     implementation("com.google.firebase:firebase-firestore")
 
+    implementation ("com.github.bumptech.glide:glide:4.12.0") // Reemplaza con la versión más reciente
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
 
 }
