@@ -27,6 +27,13 @@ import ucr.ac.cr.boxb.R;
 
 
 public class Popup_AddBills {
+
+    private OnBillAddedListener listener;
+
+    public Popup_AddBills(OnBillAddedListener listener){
+        this.listener = listener;
+    }
+
     EditText txt_name_add_bill, txt_date_add_bill, txt_amount_add_bill, txt_iva_add_bill;
     FloatingActionButton btn_add_bill_close;
 
@@ -71,6 +78,11 @@ public class Popup_AddBills {
                                 public void onSuccess(DocumentReference documentReference) {
                                     Toast.makeText(v.getContext(), "Bill added", Toast.LENGTH_SHORT).show();
                                     alertDialog.hide();
+
+                                    if (listener != null)
+                                    {
+                                        listener.onBillAdded();
+                                    }
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
@@ -119,4 +131,7 @@ public class Popup_AddBills {
 
     }//End checkBlanks
 
+    public interface OnBillAddedListener{
+        void onBillAdded();
+    }
 }//End class

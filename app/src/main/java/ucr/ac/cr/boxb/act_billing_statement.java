@@ -28,10 +28,11 @@ import ucr.ac.cr.boxb.databinding.LytActBillingStatementBinding;
 import ucr.ac.cr.boxb.ui.utils.PopUp_InfoClient;
 import ucr.ac.cr.boxb.ui.utils.Popup_AddBills;
 
-public class act_billing_statement extends AppCompatActivity {
+public class act_billing_statement extends AppCompatActivity implements Popup_AddBills.OnBillAddedListener {
     private LytActBillingStatementBinding binding;
+
+    Popup_AddBills popupAddBills = new Popup_AddBills(this);
     FirebaseFirestore db;
-    Popup_AddBills popupAddBills = new Popup_AddBills();
     PopUp_InfoClient popUpInfoClient = new PopUp_InfoClient();
     FloatingActionButton btn_Billing_addBill;
     TextView txtClientBill;
@@ -63,6 +64,9 @@ public class act_billing_statement extends AppCompatActivity {
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navStantement, navController);
 
+        getClientId();
+
+        fillTable();
 
         navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -90,6 +94,21 @@ public class act_billing_statement extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    public void fillTable()
+    {
+        Bundle bundle = new Bundle();
+        bundle.putString("clientId", clientId );
+        System.out.println("clientId act billing = " + clientId);
+        NavController navController = Navigation.findNavController(act_billing_statement.this, R.id.nav_host_fragment_billing_statement);
+        bundle.putString("type", "Sale" );
+        navController.navigate(R.id.purchases_navigation, bundle);
+    }
+
+    public void getClientId()
+    {
         //Get Bundle with the info of the client
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null) {
@@ -142,9 +161,10 @@ public class act_billing_statement extends AppCompatActivity {
             }
 
         }
+    }
 
-
-
-
+    @Override
+    public void onBillAdded() {
+        fillTable();
     }
 }
