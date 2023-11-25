@@ -54,7 +54,6 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     // Import the Firestore
     implementation("com.google.firebase:firebase-firestore")
-
-
-
+    //implementation volley
+    implementation 'com.android.volley:volley:1.1.1'
 }
