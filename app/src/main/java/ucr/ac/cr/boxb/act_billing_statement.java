@@ -25,10 +25,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import ucr.ac.cr.boxb.databinding.LytActBillingStatementBinding;
 import ucr.ac.cr.boxb.ui.utils.Popup_AddBills;
 
-public class act_billing_statement extends AppCompatActivity {
+public class act_billing_statement extends AppCompatActivity implements Popup_AddBills.OnBillAddedListener {
     private LytActBillingStatementBinding binding;
+
+    Popup_AddBills popupAddBills = new Popup_AddBills(this);
     FirebaseFirestore db;
-    Popup_AddBills popupAddBills = new Popup_AddBills();
     Button btn_Billing_addBill;
     TextView txtClientBill;
 
@@ -149,4 +150,8 @@ public class act_billing_statement extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBillAdded() {
+        fillTable();
+    }
 }
