@@ -57,6 +57,9 @@ public class act_billing_statement extends AppCompatActivity {
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navStantement, navController);
 
+        getClientId();
+
+        fillTable();
 
         navView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -79,11 +82,25 @@ public class act_billing_statement extends AppCompatActivity {
                     navController.navigate(R.id.purchases_navigation, bundle);
                     return true;
                 }
-
                 return false;
             }
         });
 
+
+    }
+
+    public void fillTable()
+    {
+        Bundle bundle = new Bundle();
+        bundle.putString("clientId", clientId );
+        System.out.println("clientId act billing = " + clientId);
+        NavController navController = Navigation.findNavController(act_billing_statement.this, R.id.nav_host_fragment_billing_statement);
+        bundle.putString("type", "Sale" );
+        navController.navigate(R.id.purchases_navigation, bundle);
+    }
+
+    public void getClientId()
+    {
         //Get Bundle with the info of the client
         Bundle bundle = this.getIntent().getExtras();
         if (bundle != null) {
@@ -130,9 +147,6 @@ public class act_billing_statement extends AppCompatActivity {
             }
 
         }
-
-
-
-
     }
+
 }

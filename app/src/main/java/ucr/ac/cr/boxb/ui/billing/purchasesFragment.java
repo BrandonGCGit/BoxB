@@ -72,14 +72,16 @@ public class purchasesFragment extends Fragment {
         View root = binding.getRoot();
 
         Bundle args = getArguments();
-        clientId = args.getString("clientId");
-        type = args.getString("type");
+        if (args != null){
+            clientId = args.getString("clientId");
+            type = args.getString("type");
+        }
 
-        System.out.println("type = " + type);
+        if (clientId != null && type != null)
+        {
+            fillList();
+        }
 
-        // Fill the list of purchases
-        fillList();
-        // Return the root view
         return root;
     }
 
