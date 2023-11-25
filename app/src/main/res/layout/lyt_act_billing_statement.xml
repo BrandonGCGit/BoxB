@@ -68,27 +68,40 @@
 
         <TextView
             android:id="@+id/txtClientBill"
-            android:layout_width="335dp"
+            android:layout_width="291dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
             android:text="TextView"
             android:textColor="@color/soft_green"
             android:textSize="32sp" />
+
+        <ImageButton
+            android:id="@+id/btn_Billing_infoClient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:backgroundTint="#00FFFFFF"
+            android:elevation="8dp"
+            android:src="@drawable/info"
+            app:tint="@color/soft_green" />
     </LinearLayout>
 
-    <Button
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_Billing_addBill"
-        android:layout_width="79dp"
-        android:layout_height="81dp"
-        android:backgroundTint="#445D48"
-        android:drawableTop="@drawable/add"
-
-        android:drawableTint="#001524"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:src="@drawable/add"
+        app:backgroundTint="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nav_host_fragment_billing_statement"
-        app:layout_constraintVertical_bias="0.165" />
+        app:maxImageSize="40dp"
+        app:useCompatPadding="false" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

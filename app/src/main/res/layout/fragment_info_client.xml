@@ -1,45 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue">
 
     <LinearLayout
         android:layout_width="350dp"
-        android:layout_height="592dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/border"
         android:orientation="vertical"
-        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="60dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="271dp"
+                android:layout_width="216dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:gravity="end"
-                android:text="@string/title_addbill"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="@string/title_infoClient"
+                android:textAlignment="center"
                 android:textColor="@color/soft_white"
                 android:textSize="24sp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_add_bill_close"
+                android:id="@+id/btn_InfoClient_close"
                 android:layout_width="wrap_content"
-                android:layout_height="58dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="15dp"
+                android:layout_margin="16dp"
                 android:src="@android:drawable/ic_delete"
                 app:backgroundTint="@color/green"
                 app:fabCustomSize="30dp"
@@ -47,24 +44,8 @@
                 app:maxImageSize="16dp" />
         </LinearLayout>
 
-        <Spinner
-            android:id="@+id/spn_type_add_bill"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            android:background="@drawable/border"
-            android:dropDownSelector="@color/soft_white"
-            android:entries="@array/types"
-            android:foregroundTint="@color/soft_white"
-            android:padding="15dp"
-            android:popupBackground="@color/soft_white"
-            android:spinnerMode="dialog"
-            android:textColor="@color/white" />
-
         <EditText
-            android:id="@+id/txt_name_add_bill"
+            android:id="@+id/txt_InfoClient_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
@@ -73,77 +54,98 @@
             android:backgroundTint="@color/soft_white"
             android:drawableEnd="@drawable/icono_usuario"
             android:ems="10"
-            android:fontFamily="@font/open_sans_semibold"
             android:hint="@string/txt_name"
             android:inputType="text"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/soft_white"
             android:textColorHint="@color/muted_white"
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/txt_date_add_bill"
+            android:id="@+id/txt_InfoClient_lastname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="25dp"
             android:backgroundTint="@color/soft_white"
-            android:drawableEnd="@drawable/icon_calen"
+            android:drawableEnd="@drawable/icono_usuario"
             android:ems="10"
-            android:fontFamily="@font/open_sans_semibold"
-            android:hint="@string/txt_date"
+            android:hint="@string/txt_user_LastName"
             android:inputType="text"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/soft_white"
             android:textColorHint="@color/muted_white"
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/txt_amount_add_bill"
+            android:id="@+id/txt_InfoClient_documentId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="25dp"
             android:backgroundTint="@color/soft_white"
-            android:drawableEnd="@drawable/icon_cuenta"
+            android:drawableEnd="@drawable/icono_usuario"
             android:ems="10"
-            android:fontFamily="@font/open_sans_semibold"
-            android:hint="@string/txt_amount"
+            android:hint="@string/txt_iddocument"
             android:inputType="text"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/soft_white"
             android:textColorHint="@color/muted_white"
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/txt_iva_add_bill"
+            android:id="@+id/txt_InfoClient_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="25dp"
             android:backgroundTint="@color/soft_white"
-            android:drawableEnd="@drawable/icon_cuenta"
+            android:drawableEnd="@drawable/icono_email"
             android:ems="10"
-            android:fontFamily="@font/open_sans_semibold"
-            android:hint="@string/txt_iva"
+            android:hint="@string/txt_email"
             android:inputType="text"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/soft_white"
             android:textColorHint="@color/muted_white"
             android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/btn_add_bill"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:backgroundTint="@color/green"
-            android:fontFamily="@font/open_sans_semibold"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="@string/btn_add"
-            android:textSize="20sp"
-            app:cornerRadius="15dp"
-            app:strokeColor="@color/soft_white"
-            app:strokeWidth="1dp" />
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_InfoClient_update"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/title_updateClient"
+                android:textSize="16sp"
+                app:cornerRadius="10dp"
+                app:strokeColor="@color/soft_white"
+                app:strokeWidth="1dp" />
+
+            <Button
+                android:id="@+id/btn_InfoClient_delete"
+                android:layout_width="115dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="30dp"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="@string/title_deleteClient"
+                android:textSize="16sp"
+                app:cornerRadius="10dp"
+                app:strokeColor="@color/soft_white"
+                app:strokeWidth="1dp" />
+        </LinearLayout>
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,8 @@
 package ucr.ac.cr.boxb.ui.utils;
 
+import static ucr.ac.cr.boxb.R.id.btn_add_bill_close;
+
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,6 +16,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -24,8 +28,10 @@ import ucr.ac.cr.boxb.R;
 
 public class Popup_AddBills {
     EditText txt_name_add_bill, txt_date_add_bill, txt_amount_add_bill, txt_iva_add_bill;
+    FloatingActionButton btn_add_bill_close;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    @SuppressLint("MissingInflatedId")
     public void showPopupAddBill(Context context, String clientId) {
         // Infla el diseño personalizado
         View view = LayoutInflater.from(context).inflate(R.layout.lyt_add_bill, null);
@@ -38,16 +44,11 @@ public class Popup_AddBills {
         Spinner spn_type_add_bill = view.findViewById(R.id.spn_type_add_bill);
 
         Button btn_add_bill = view.findViewById(R.id.btn_add_bill);
+        btn_add_bill_close = view.findViewById(R.id.btn_add_bill_close);
 
-
-        // Construye el AlertDialog
+        //Build AlertDialog
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setView(view);
-
-        // Configura cualquier otra configuración que desees
-
-
-        // Muestra el AlertDialog
         AlertDialog alertDialog = builder.create();
 
         btn_add_bill.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +81,13 @@ public class Popup_AddBills {
                             });
                 }
 
+            }
+        });
+
+        btn_add_bill_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.dismiss();
             }
         });
 

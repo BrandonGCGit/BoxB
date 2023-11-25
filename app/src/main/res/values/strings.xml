@@ -8,6 +8,7 @@
     <string name="title_greeting">Get Started</string>
     <string name="title_clients">Clients</string>
     <string name="title_logout">Log Out</string>
+    <string name="title_infoClient">Client Info</string>
 
 
     <string name="title_sales">Sales</string>
@@ -51,6 +52,8 @@
     <string name="btn_add">Add</string>
     <string name="title_addCliente">Add Client</string>
     <string name="title_addbill">Add Billing Statement</string>
+    <string name="title_updateClient">Update</string>
+    <string name="title_deleteClient">Delete</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -11,27 +11,32 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import ucr.ac.cr.boxb.databinding.LytActBillingStatementBinding;
+import ucr.ac.cr.boxb.ui.utils.PopUp_InfoClient;
 import ucr.ac.cr.boxb.ui.utils.Popup_AddBills;
 
 public class act_billing_statement extends AppCompatActivity {
     private LytActBillingStatementBinding binding;
     FirebaseFirestore db;
     Popup_AddBills popupAddBills = new Popup_AddBills();
-    Button btn_Billing_addBill;
+    PopUp_InfoClient popUpInfoClient = new PopUp_InfoClient();
+    FloatingActionButton btn_Billing_addBill;
     TextView txtClientBill;
 
+    ImageButton btn_Billing_infoClient;
     String clientId;
 
     @Override
@@ -46,6 +51,7 @@ public class act_billing_statement extends AppCompatActivity {
 
         txtClientBill = findViewById(R.id.txtClientBill);
         btn_Billing_addBill = findViewById(R.id.btn_Billing_addBill);
+        btn_Billing_infoClient = findViewById(R.id.btn_Billing_infoClient);
 
         BottomNavigationView navView = findViewById(R.id.nav_stantement);
         // Passing each menu ID as a set of Ids because each
@@ -101,8 +107,7 @@ public class act_billing_statement extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
                             if (document.exists()) {
-
-                                Toast.makeText(act_billing_statement.this, "" + document.getData(), Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(act_billing_statement.this, "" + document.getData(), Toast.LENGTH_SHORT).show();
                                 String clientName = document.getString("name") + " " + document.getString("lastName");
                                 txtClientBill.setText(clientName);
                             } else {
@@ -120,6 +125,13 @@ public class act_billing_statement extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         popupAddBills.showPopupAddBill(act_billing_statement.this, clientId);
+                    }
+                });
+
+                btn_Billing_infoClient.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        popUpInfoClient.showPopupInfoClient(act_billing_statement.this, clientId);
                     }
                 });
 

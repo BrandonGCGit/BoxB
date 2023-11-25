@@ -12,4 +12,5 @@
     <color name="blue">#001524</color>
     <color name="soft_white">#FDE5D4</color>
     <color name="soft_green">#D6CC99</color>
+    <color name="muted_white">#80FFFFFF</color>
 </resources>
