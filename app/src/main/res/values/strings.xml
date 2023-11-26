@@ -36,6 +36,13 @@
         <item>Expense</item>
     </string-array>
 
+    <string-array name="divisas">
+        <item>CRC</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>JPY</item>
+    </string-array>
+
     <string-array name="pays">
         <item>pay 1</item>
         <item>pay 2</item>
