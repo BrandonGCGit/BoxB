@@ -8,12 +8,14 @@
     tools:context=".ui.home.HomeFragment"
     tools:ignore="MissingClass">
 
+
+
     <LinearLayout
         android:id="@+id/linearLayout6"
-        android:layout_width="360dp"
-        android:layout_height="163dp"
+        android:layout_width="358dp"
+        android:layout_height="252dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="10dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,34 +25,72 @@
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="0dp"
             app:srcCompat="@drawable/dolares" />
 
-        <EditText
-            android:id="@+id/txtDolares"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/soft_green" />
+
+            <EditText
+                android:id="@+id/txtDolares"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:backgroundTint="@color/soft_white"
+                android:ems="10"
+                android:inputType="text"
+                android:textColor="@color/soft_white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/soft_green" />
+
+            <TextView
+                android:id="@+id/txtColones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:textAlignment="center"
+                android:textColor="@color/soft_white" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnConversor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
-            android:backgroundTint="@color/soft_white"
-            android:ems="10"
-            android:inputType="text"
-            android:text="1"
-            android:textColor="@color/soft_white" />
-
-        <EditText
-            android:id="@+id/txtColones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="25dp"
-            android:backgroundTint="@color/soft_white"
-            android:ems="10"
-            android:inputType="text"
-            android:textColor="@color/soft_white" />
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/soft_green"
+            android:text="Convertir" />
 
     </LinearLayout>
 

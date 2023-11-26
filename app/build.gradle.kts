@@ -20,7 +20,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -55,8 +58,11 @@ dependencies {
     // Import the Firestore
     implementation("com.google.firebase:firebase-firestore")
 
-    implementation ("com.github.bumptech.glide:glide:4.12.0") // Reemplaza con la versión más reciente
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation("com.github.bumptech.glide:glide:4.12.0") // Reemplaza con la versión más reciente
+    annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
+
+    //implementation volley
+    implementation("com.android.volley:volley:1.2.1")
 
 
 }
