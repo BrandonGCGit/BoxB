@@ -63,9 +63,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="342dp"
-        android:layout_height="470dp"
-        android:layout_marginTop="24dp"
+
+        android:layout_width="351dp"
+        android:layout_height="448dp"
+        android:layout_marginTop="5dp"
+
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -83,8 +85,10 @@
 
         <ListView
             android:id="@+id/lstV_Home_listClients"
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
+
+            android:layout_width="351dp"
+            android:layout_height="384dp"
+
             android:layout_gravity="clip_vertical|center_horizontal|center_vertical"
             android:layout_marginTop="10dp" />
     </LinearLayout>
