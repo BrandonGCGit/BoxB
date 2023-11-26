@@ -2,10 +2,13 @@ package ucr.ac.cr.boxb;
 
 import static com.android.volley.Request.Method.GET;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,7 +43,7 @@ import org.json.JSONObject;
 import ucr.ac.cr.boxb.databinding.ActivityMainBinding;
 import ucr.ac.cr.boxb.ui.home.HomeFragment;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity{
 
     private ActivityMainBinding binding;
     //private static final String URL= "https://api.cambio.today/v1/quotes/USD/CRC/json?quantity="+1+"&key=45816|GOG4CB4u5GnqVvyTmR3m";
@@ -82,8 +85,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner= findViewById(R.id.spinner);
         spinner1= findViewById(R.id.spinner1);
 
-        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this, R.array.divisas, android.R.layout.simple_spinner_item);
-        ArrayAdapter<CharSequence> adapter1 =ArrayAdapter.createFromResource(this, R.array.divisas, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.divisas, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.divisas, android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -91,8 +94,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setAdapter(adapter);
         spinner1.setAdapter(adapter1);
 
-        spinner.setOnItemSelectedListener(this);
-        spinner1.setOnItemSelectedListener(this);
+
 
         requestQueue = Volley.newRequestQueue(this);
 
@@ -117,10 +119,36 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         btnConversor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String URL = "https://api.cambio.today/v1/quotes/"+divisa1+"/CRC/json?quantity="+txtDolares.getText()+"&key=45816|GOG4CB4u5GnqVvyTmR3m";
+                String URL = "https://api.cambio.today/v1/quotes/"+divisa1+"/"+divisa2+"/json?quantity="+txtDolares.getText()+"&key=45816|GOG4CB4u5GnqVvyTmR3m";
                 //jsonArrayRequest();
                 //stringRequest();
                 jsonObjectRequest(URL);
+            }
+        });
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                divisa1= parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                divisa2= parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }
@@ -184,15 +212,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
         );
         requestQueue.add(jsonObjectRequest);
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        divisa1= parent.getItemAtPosition(position).toString();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
     }
 }
