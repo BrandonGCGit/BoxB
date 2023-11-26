@@ -5,8 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,17 +25,26 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import ucr.ac.cr.boxb.databinding.ActivityMainBinding;
 import ucr.ac.cr.boxb.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    String URL = "https://api.cambio.today/v1/quotes/USD/CRC/json?quantity="+1+"&key=45816|GOG4CB4u5GnqVvyTmR3m";
 
     FirebaseAuth boxBAuth;
-    Button btn_Prueba_Login, btn_Billing;
+    Button btn_Prueba_Login, btn_Billing, btnConversor;
 
-    EditText txtDolares, txtColones;
+    EditText txtDolares;
+    TextView txtColones;
+
+    RequestQueue requestQueue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,8 +66,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
         btn_Prueba_Login = binding.btnPruebaLogin;
         btn_Billing = binding.btnTry;
-        txtColones= findViewById(R.id.txtColones);
+        btnConversor= findViewById(R.id.btnConversor);
         txtDolares=findViewById(R.id.txtDolares);
+        txtColones=findViewById(R.id.txtColones);
+        requestQueue = Volley.newRequestQueue(this);
 
 
         btn_Prueba_Login.setOnClickListener(new View.OnClickListener() {
@@ -70,12 +89,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnConversor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String URL = "https://api.cambio.today/v1/quotes/USD/CRC/json?quantity="+txtDolares.getText()+"&key=45816|GOG4CB4u5GnqVvyTmR3m";
+                //jsonArrayRequest();
 
-
-
-
-
+            }
+        });
     }
+
 
     private void initializeFirebase(){
         FirebaseApp.initializeApp(MainActivity.this);

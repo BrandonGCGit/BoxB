@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="357dp"
-        android:layout_height="186dp"
+        android:layout_height="237dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="10dp"
@@ -37,19 +37,28 @@
             android:backgroundTint="@color/soft_white"
             android:ems="10"
             android:inputType="text"
-            android:text="1"
             android:textColor="@color/soft_white" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/txtColones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
-            android:text="0"
             android:textAlignment="center"
             android:textColor="@color/soft_white" />
+
+        <Button
+            android:id="@+id/btnConversor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/soft_green"
+            android:text="Convertir" />
 
     </LinearLayout>
 
