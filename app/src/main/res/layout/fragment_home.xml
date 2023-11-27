@@ -10,99 +10,100 @@
 
 
 
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout6"-->
+<!--        android:layout_width="358dp"-->
+<!--        android:layout_height="252dp"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--&lt;!&ndash;        <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/imageView6"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:srcCompat="@drawable/dolares" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginStart="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:orientation="horizontal">&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <Spinner&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/spinner"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:padding="10sp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_weight="1"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:background="@color/soft_green" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <EditText&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/txtDolares"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginStart="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginTop="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_marginEnd="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:backgroundTint="@color/soft_white"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:ems="10"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:inputType="text"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textColor="@color/soft_white" />&ndash;&gt;-->
+<!--&lt;!&ndash;        </LinearLayout>&ndash;&gt;-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <Spinner-->
+<!--                android:id="@+id/spinner1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:padding="10dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+
+<!--                android:background="@color/soft_green" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtColones"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_marginStart="25dp"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginEnd="25dp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/soft_white" />-->
+<!--        </LinearLayout>-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btnConversor"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="25dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginEnd="25dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:backgroundTint="@color/soft_green"-->
+<!--            android:text="Convertir" />-->
+
+<!--    </LinearLayout>-->
+
     <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="358dp"
-        android:layout_height="252dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="10dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            app:srcCompat="@drawable/dolares" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/soft_green" />
-
-            <EditText
-                android:id="@+id/txtDolares"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="25dp"
-                android:backgroundTint="@color/soft_white"
-                android:ems="10"
-                android:inputType="text"
-                android:textColor="@color/soft_white" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/spinner1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/soft_green" />
-
-            <TextView
-                android:id="@+id/txtColones"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="25dp"
-                android:textAlignment="center"
-                android:textColor="@color/soft_white" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnConversor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/soft_green"
-            android:text="Convertir" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="351dp"
-        android:layout_height="448dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="363dp"
+        android:layout_height="665dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textView6"
@@ -116,7 +117,7 @@
         <ListView
             android:id="@+id/lstV_Home_listClients"
             android:layout_width="351dp"
-            android:layout_height="384dp"
+            android:layout_height="586dp"
             android:layout_gravity="clip_vertical|center_horizontal|center_vertical"
             android:layout_marginTop="10dp" />
     </LinearLayout>

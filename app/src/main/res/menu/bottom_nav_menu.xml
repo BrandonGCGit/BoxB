@@ -17,6 +17,11 @@
         android:icon="@drawable/baseline_add_circle_outline_24"
         android:title="Add Client" />
 
+    <item
+        android:id="@+id/navigation_converter"
+        android:icon="@drawable/baseline_currency_exchange_24"
+        android:title="Convertor" />
+
 
 <!--    <item-->
 <!--        android:id="@+id/navigation_notifications"-->
