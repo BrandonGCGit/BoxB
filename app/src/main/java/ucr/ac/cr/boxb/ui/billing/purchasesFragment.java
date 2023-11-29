@@ -174,14 +174,15 @@ public class purchasesFragment extends Fragment {
 
 
             TextView tvIVAColumn = new TextView(binding.getRoot().getContext());
-            tvIVAColumn.setText(bill.getName());
+            tvIVAColumn.setText(bill.getIva());
             tvIVAColumn.setTextColor(color);
             tvIVAColumn.setPadding(paddingInPx,paddingInPx,paddingInPx,paddingInPx);
             tbrow.addView(tvIVAColumn);
 
 
             TextView tvTotalColumn = new TextView(binding.getRoot().getContext());
-            tvTotalColumn.setText(bill.getName());
+            int total = Integer.parseInt(bill.getIva()) + Integer.parseInt(bill.getAmount());
+            tvTotalColumn.setText(String.valueOf(total));
             tvTotalColumn.setTextColor(color);
             tvTotalColumn.setPadding(paddingInPx,paddingInPx,paddingInPx,paddingInPx);
             tbrow.addView(tvTotalColumn);
@@ -216,6 +217,7 @@ public class purchasesFragment extends Fragment {
                                 String name = document.getString("name");
                                 String type = document.getString("type");
                                 bill = new Bill(clientId, name,type,iva,date,amount);
+                                System.out.println("bill = " + bill);
                                 listPurchases.add(bill);
                             }
 //                            clientAdapter = new ClientAdapter(getContext(), listClients);
