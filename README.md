@@ -6,6 +6,8 @@ BoxB, es una apliacion contable dirigida especificamente a contadores, la cual l
 ![Logo](https://i.postimg.cc/L4gJxNB2/logo.png)
 
 
+##Link Figma
+[Figma](https://www.figma.com/file/8KmhcZOjOw1wfC1gQNJfQw/Accounting-App?type=design&node-id=0%3A1&mode=design&t=TOC8bSHcOaZ3HHLT-1)
 
 
 ## Features
